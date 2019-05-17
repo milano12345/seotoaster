@@ -37,7 +37,7 @@ INSERT INTO `config` (`name`, `value`) VALUES
 ('enableMinifyCss', '0'),
 ('enableMinifyJs', '0'),
 ('cropNewFormat', '0'),
-('version',	'3.0.9');
+('version',	'3.1.0');
 
 DROP TABLE IF EXISTS `container`;
 CREATE TABLE `container` (
@@ -950,3 +950,6 @@ CREATE TABLE `form_blacklist_rules` (
   PRIMARY KEY (`type`,`value`),
   UNIQUE (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+UPDATE `masks_list` SET `mask_value`= CONCAT(`mask_value`, '?9');
+UPDATE `masks_list` SET `full_mask_value`= CONCAT(`full_mask_value`, '?9');
