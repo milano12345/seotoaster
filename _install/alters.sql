@@ -738,12 +738,17 @@ CREATE TABLE `form_blacklist_rules` (
 -- Add crop new format
 INSERT IGNORE INTO `config` (`name`, `value`) VALUES ('cropNewFormat', '0');
 
--- 17/05/2019
+-- 12/06/2019
 -- version: 3.0.9
+-- Add optimizedNotifications param. value (email1,email2,...)
+INSERT IGNORE INTO `config` (`name`, `value`) VALUES ('optimizedNotifications', '');
+
+-- 17/05/2019
+-- version: 3.1.0
 -- Add optional mask param
 UPDATE `masks_list` SET `mask_value`= CONCAT(`mask_value`, '?9');
 UPDATE `masks_list` SET `full_mask_value`= CONCAT(`full_mask_value`, '?9');
 
 -- These alters are always the latest and updated version of the database
-UPDATE `config` SET `value`='3.1.0' WHERE `name`='version';
+UPDATE `config` SET `value`='3.1.1' WHERE `name`='version';
 SELECT value FROM `config` WHERE name = 'version';
